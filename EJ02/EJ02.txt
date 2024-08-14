@@ -1,0 +1,67 @@
+Hacer una imagen vectorizada
+Para hacer una imagen vectorizada se puede utilizar SVG que significa Scalable Vector Graphics o Gráficos de vectores escalables, se maneja en el lenguaje de xml (una extension de html con organización como espaciado), tiene la ventaja de que los elementos se pueden animar y de que se puede integrar a otros lenguajes como CSS o JavaScript. Para usar este formato se puede utilizar una aplicación de dibujo online llamada INKSCAPE que sirve para hacer dibujos, aunque en la actualidad ya se pueden crear imágenes vectoriales o covertir na imagen a ese formato con varios programas como Photoshop op Canvas de manera gratuita
+
+Link de adobe https://www.adobe.com/es/express/feature/image/convert/svg
+
+En esta ocasión se hara un rectángulo azul con borde rojo, el código es:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Rectangulo con borde</h2>
+
+<svg width="320" height="130" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="100" x="10" y="10" style="fill:rgb(0,0,255);stroke-width:3;stroke:red" />
+</svg>
+ 
+</body>
+</html>
+
+style es el atributo que le da a CSS las propiedades al rectángulo y ahi se indica con stroke-width que sea 3 de ancho el borde y de color rojo con stroke:red
+fill le da el color al rectángulo
+
+Ahora se hace uno con opacidad
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Rectangulo on opacidad</h2>
+
+<svg width="300" height="170" xmlns="http://www.w3.org/2000/svg">
+  <rect width="150" height="150" x="10" y="10" style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9" />
+</svg>
+ 
+</body>
+</html>
+fill-opacity: define la opacidad del color del rectángulo, en este caso la puso de 0 a 1
+stroke-opacity: es igual, solo que cambia la opacidad del borde de 0 a 0.9
+
+---Convertir imagen a SVG---
+Se inserta la imagen en el programa la imagen con <image> colocando href como fuente de referencia o URL y al frente el nombre del archivo en comillas como "carro.jpg" y ya viene con caracteristicas definidas como altura(height) y width(ancho), se pueden modificar esas y listo ya tienes tu imagen svg al descargar el archivo
+Se puede combinar con texto y con figuras si se desea también.
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Image in a circle and some text</h2>
+
+<svg height="250" width="300" xmlns="http://www.w3.org/2000/svg">
+  <circle r="105" cx="150" cy="120" fill="lightblue" />
+  <image x="0" y="60" width="300" height="100" href="CARRO.jpg" />
+  <text x="84" y="180" fill="black">Mira este carro genial</text>
+
+</svg>
+
+</body>
+</html>
+svg: es el lienzo de la imagen, básicamente el tamaño que quieres del resultado final y con xmlna se llama a la librería de W3C
+circle: el circulo y tie posición en x y y, radio con r y el color
+image: la imagen insertada con su tamaño, posición y url
+text: el texto de la imagen, con fill se llena de color y con >< se pone el texto en la mitad.
+
+Referencias:
+https://www.canva.com/es_co/funciones/editor-svg/
+https://www.w3schools.com/graphics/svg_image.asp
+
